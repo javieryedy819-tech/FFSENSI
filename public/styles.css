@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free Fire Sensi AI</title>
+    <meta name="description" content="AI-powered Free Fire sensitivity assistant." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand-wrap">
+          <div class="brand-mark">FF</div>
+          <div>
+            <div class="brand-name">Free Fire Sensi AI</div>
+            <div class="brand-subtitle">Smart aim tuning</div>
+          </div>
+        </div>
+
+        <nav class="nav-section">
+          <div class="nav-title">Assistant</div>
+          <button class="nav-item active" data-view="chat">💬 Chat</button>
+          <button class="nav-item" data-view="saved">💾 Saved profiles</button>
+          <button class="nav-item" data-view="history">🕘 History</button>
+        </nav>
+
+        <div class="control-panel">
+          <div class="nav-title">Settings</div>
+          <label class="setting-row">
+            <span>Theme</span>
+            <select id="themeSelect">
+              <option value="neon">Neon Green</option>
+              <option value="midnight">Midnight</option>
+            </select>
+          </label>
+          <label class="setting-row">
+            <span>Language</span>
+            <select id="languageSelect">
+              <option value="en">English</option>
+              <option value="es">Español</option>
+            </select>
+          </label>
+          <button id="newConversationBtn" class="secondary-btn">New conversation</button>
+          <button id="clearChatBtn" class="ghost-btn">Clear chat</button>
+        </div>
+      </aside>
+
+      <main class="content-panel">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">AI assistant</p>
+            <h1 id="pageTitle">Free Fire Sensi AI</h1>
+          </div>
+          <div class="status-wrap">
+            <span class="status-dot"></span>
+            <span id="statusText">Ready</span>
+          </div>
+        </header>
+
+        <section id="chatView" class="panel active">
+          <div class="chat-window" id="chatWindow"></div>
+
+          <div class="chat-input-wrap">
+            <div class="composer">
+              <textarea id="messageInput" rows="1" placeholder="Type your answer..."></textarea>
+              <button id="sendBtn" class="primary-btn">Send</button>
+            </div>
+            <div class="composer-actions">
+              <button id="regenerateBtn" class="ghost-btn">Regenerate</button>
+              <button id="copyLastBtn" class="ghost-btn">Copy response</button>
+            </div>
+          </div>
+        </section>
+
+        <section id="savedView" class="panel hidden">
+          <div class="section-header">
+            <h2>Saved configurations</h2>
+          </div>
+          <div id="savedProfiles" class="saved-grid"></div>
+        </section>
+
+        <section id="historyView" class="panel hidden">
+          <div class="section-header">
+            <h2>Previous sensitivity history</h2>
+          </div>
+          <div id="historyList" class="history-list"></div>
+        </section>
+
+        <section id="resultsView" class="panel hidden dashboard-panel">
+          <div class="results-header">
+            <div>
+              <p class="eyebrow">Your setup</p>
+              <h2>Personalized sensitivity</h2>
+            </div>
+            <div class="action-row">
+              <button id="copyAllBtn" class="primary-btn small-btn">Copy all</button>
+              <button id="saveConfigBtn" class="secondary-btn small-btn">Save sensitivity</button>
+              <button id="downloadBtn" class="ghost-btn small-btn">Download image</button>
+            </div>
+          </div>
+
+          <div class="metrics-grid" id="resultsGrid"></div>
+
+          <div class="analysis-box">
+            <h3>Why these settings?</h3>
+            <p id="analysisText"></p>
+          </div>
+
+          <div class="split-grid">
+            <div class="mini-card">
+              <h4>HUD recommendation assistant</h4>
+              <p id="hudRecommendation"></p>
+            </div>
+            <div class="mini-card">
+              <h4>Device optimization</h4>
+              <p id="deviceRecommendation"></p>
+            </div>
+            <div class="mini-card">
+              <h4>Aim problem analysis</h4>
+              <p id="aimRecommendation"></p>
+            </div>
+            <div class="mini-card">
+              <h4>Sensitivity comparison</h4>
+              <p id="comparisonText"></p>
+            </div>
+          </div>
+
+          <div class="results-actions">
+            <button id="regenerateSensitivityBtn" class="primary-btn">Regenerate sensitivity</button>
+            <button id="adjustSettingsBtn" class="secondary-btn">Adjust settings</button>
+            <button id="resetBtn" class="ghost-btn">Reset settings</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
